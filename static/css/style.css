@@ -1,0 +1,16 @@
+a, a:hover {color: #212529;}
+a:hover {
+  text-decoration: none;
+  cursor: default;
+}
+table {
+  border: 2px solid #acf;
+  border-collapse: separate;
+  margin: 30px 15px;
+}
+th, td {padding: 10px;}
+th {
+  background-color: #acf;
+  text-align: center;
+}
+tr:nth-of-type(odd) {background-color: #def;}

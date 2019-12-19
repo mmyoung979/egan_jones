@@ -6,5 +6,6 @@ from . import views
 
 # URLS
 urlpatterns = [
-    path('<ticker>', views.index, name='home')
+    path('', views.index, name='home'),
+    path('<ticker>', views.cash_flows, name='cash_flows'),
 ]

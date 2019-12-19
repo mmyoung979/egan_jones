@@ -53,6 +53,4 @@ def get_report(ticker):
     table = driver.find_element_by_class_name("report")
 
     # Get report
-    return table.get_attribute("innerHTML")
-
-print(get_report("aapl"))
+    return table.get_attribute("innerHTML").replace("\n", "")

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} | {{ ticker }}{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">{{ ticker }}</h1>
+<table id="report">
+  {{ report|safe }}
+</table>
+{% endblock %}
