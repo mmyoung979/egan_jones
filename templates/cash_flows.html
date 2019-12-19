@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %} | {{ ticker }}{% endblock %}
+{% block title %}{{ ticker }}{% endblock %}
 
 {% block content %}
-<h1 class="text-center mt-4">{{ ticker }}</h1>
-<table id="report">
-  {{ report|safe }}
-</table>
+  <div class="text-center my-5">
+    <h1>{{ ticker }}</h1>
+    <p>Last pulled on {{ time }}</p>
+  </div>
+  <table id="report">
+    {{ report|safe }}
+  </table>
+{% endblock %}
+
+{% block js %}
+  <script>$(".a").contents().unwrap();</script>
 {% endblock %}

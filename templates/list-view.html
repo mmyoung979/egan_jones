@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}List View{% endblock %}
+
+{% block content %}
+  <div class="row mt-5">
+    <div class="col text-center">
+      <h1>List View</h1>
+      <p>
+        Here you will see a list of tickers for companies whose Consolidated Statements of Cash Flows have already been saved.<br>
+        If you search a new ticker, it will take roughly 10 seconds to load and save for future use.
+      </p>
+    </div>
+  </div>
+
+  <div class="row mt-5 pb-3">
+    <form class="form-inline my-2 my-lg-0 center-div" method="POST" action="{% url 'cash_flows' %}">
+      {% csrf_token %}
+      {{ form }}
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="row">
+    <table class="col center-div mt-5 px-0">
+      <thead>
+        <th>Ticker</th>
+      </thead>
+      <tbody>
+        {% for obj in list %}
+          <tr>
+            <td class="text-center"><a href="{% url 'detail_view' obj.ticker %}">{{ obj.ticker }}</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
